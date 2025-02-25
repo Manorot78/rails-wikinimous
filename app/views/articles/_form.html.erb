@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <%= form_with(model: @article, local: true) do |form| %>
+        <div class="mb-3">
+          <%= form.label :title, class: "form-label" %>
+          <%= form.text_field :title, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :content, class: "form-label" %>
+          <%= form.text_area :content, class: "form-control", rows: 5 %>
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <%= form.submit "<i class='fas fa-save'></i> Save".html_safe, class: "btn btn-success" %>
+          <%= link_to '<i class="fas fa-arrow-left"></i> Back'.html_safe, articles_path, class: "btn btn-secondary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
